@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Title</title>
+	</head>
+
+	<body ng-app = "App">
+	
+		<div ng-controller = "cntrl as $ctrl">	
+			<input ng-model = "search">
+			<button ng-click = "$ctrl.Search()"></button>
+		</div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+		<script src="app.module.js"></script>
+		<script src="app.controller.js"></script>
+		
+	</body>
+
+</html>
