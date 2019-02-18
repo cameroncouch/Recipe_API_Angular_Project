@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="app/styles/style.css">
+    <title>Recipe Project</title>
+</head>
+<body>
+
+<a href="#!/searchCriteria">Search</a>
+<a href="#!/recipeList">Recipes</a>
+<a href="#!/favoritesPage">Favorites</a>    
+
+<ng-view></ng-view>
+
+
+<script src="https://code.angularjs.org/1.6.5/angular.js"></script>
+<script src="https://code.angularjs.org/1.6.5/angular-route.js"></script>
+<script src="app/app.module.js"></script>
+<script src="app/app.config.js"></script>
+<!-- <script src="app/app.service.js"></script> -->
+<script src="app/components/favorites-page/favoritesPage.component.js"></script>
+<script src="app/components/recipe-list/recipeList.component.js"></script>
+<script src="app/components/search-criteria/searchCriteria.component.js"></script>
+</body>
+</html>
