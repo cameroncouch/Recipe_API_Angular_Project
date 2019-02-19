@@ -15,6 +15,19 @@ function AppService($location, $http) {
         }
 
         self.addFave = function(item) {
+
+            for(let i = 0; i < self.faveArray.length; i++){
+                
+                //console.log();
+
+                if(item == self.faveArray[i]){
+
+                    return;
+
+                }
+
+            }
+
             self.faveArray.push(item)
             console.log(self.faveArray)
 
