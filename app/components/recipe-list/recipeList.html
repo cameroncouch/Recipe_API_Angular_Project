@@ -1,1 +1,7 @@
-<p>You're at the recipe list</p>
+
+<div ng-repeat="item in $ctrl.result.$$state.value.data.hits">
+    <h2>{{item.recipe.label}}</h2>
+    <img src={{item.recipe.image}}>
+    <p>{{item.recipe.totalTime}}</p>
+</div>
+

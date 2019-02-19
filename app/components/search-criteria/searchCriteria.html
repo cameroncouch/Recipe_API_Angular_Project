@@ -1,4 +1,7 @@
-<div>	
-    <input ng-model = "search">
-    <button ng-click = "$ctrl.Search()"></button>
-</div>
+<form ng-submit="$ctrl.search()">	
+    <input ng-model = "$ctrl.input">
+    <button>Search Recipes</button>
+    <select>
+        <option ng-model="filter">Dairy Free</option>
+    </select>
+</form>
