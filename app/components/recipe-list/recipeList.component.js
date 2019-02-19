@@ -4,10 +4,13 @@ const recipeList = {
     controller: ["AppService", function(AppService) {
         const vm = this;
 
-        vm.$onInit = function(){
-        console.log("cdsyhetsh");
+        vm.$onInit = function() {
             vm.result = AppService.Get();
-            //console.log(vm.result);
+        }
+
+        vm.fave = function(item) {
+            AppService.addFave(item);
+            console.log(item)
         }
 
     }]

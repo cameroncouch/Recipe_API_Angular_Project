@@ -1,1 +1,6 @@
-<p>You're at the favorites page</p>
+<div ng-repeat="item in $ctrl.faveArray track by $index">
+    <h2>{{item.recipe.label}}</h2>
+    <img src={{item.recipe.image}}>
+    <p>{{item.recipe.totalTime}}</p>
+    <button ng-click="$ctrl.delete($index)">Clear</button>
+</div>
