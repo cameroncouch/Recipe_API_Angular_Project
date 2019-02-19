@@ -6,9 +6,7 @@ const searchCriteria = {
         vm.search = function() {
            //console.log(vm.input);
            // console.log(vm.id);
-             AppService.Search(vm.input, vm.id);
-
-            // const results = AppService.Get();
+             AppService.Search(vm.input, vm.id, vm.idx);
 
         }
     }]

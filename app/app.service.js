@@ -3,18 +3,27 @@ function AppService($location, $http) {
     const self = this;
     const key = "4d7a3e8fb6166e54fb00f65b193aa1aa";
     const appID = "c471afec";    
-    const healthSearch = ["vegan", "alcohol-free", "peanut-free", "shellfish-free"]
-    self.faveArray = [];
-    self.Search = function(input, id)  {
-        //console.log(Number(id));
+    const healthSearch = ["vegan", "alcohol-free", "peanut-free", "shellfish-free"] // array for the health filter option
+    const dietSearch = ["balanced", "high-fiber", "high-protein", "low-carb", "low-fat", "low-sodium" ] //array for the diet filter options
+    self.faveArray = []; //array where foods tht are faved are pushed
+    self.Search = function(input, id, idx)  {
+
+        self.health = (id ? "&health=" + healthSearch[Number(id)] : "" ); //If-else statement that governs empty filter options
+        self.diet   = (idx ? "&diet="  +  dietSearch[Number(idx)] : "" );
+        //search function
         $location.path("/recipeList");
-        self.data =  $http.get("https://api.edamam.com/search?q="+input+"&app_id="+appID+"&app_key="+key+"&health="+healthSearch[Number(id)]);
-        console.log(self.data);
+        self.data =  $http.get("https://api.edamam.com/search?q="+input+"&app_id="+appID+"&app_key="+key+self.health+self.diet); 
         
         }
-  
+        
         self.Get = function(){
             return self.data;
+            //if (vm.result.$$state.value.data.count == 0 ) {
+                //         vm.error = true;
+                //     }
+                //     else {
+                //         vm.error = false;
+                //     }
         }
 
         self.addFave = function(item) {
@@ -41,4 +50,7 @@ function AppService($location, $http) {
 
 angular.module("App").service("AppService", AppService);
 
-//Maybe store response in a variable
+
+//working code for search before .then added
+// $location.path("/recipeList");
+// self.data =  $http.get("https://api.edamam.com/search?q="+input+"&app_id="+appID+"&app_key="+key+self.health+self.diet); 

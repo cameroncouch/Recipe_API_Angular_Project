@@ -1,7 +1,7 @@
-
-<div ng-repeat="item in $ctrl.result.$$state.value.data.hits">
+<h1 ng-hide="$ctrl.error">No results found, search again.</h1>
+<div ng-repeat="item in $ctrl.result.data.hits">
     <h2 ng-click="$ctrl.show(item);" >{{item.recipe.label}}</h2>
-    <img ng-click="$ctrl.show(item);"  src={{item.recipe.image}}>
+    <img ng-click="$ctrl.show(item);" src={{item.recipe.image}}>
     <p>{{item.recipe.totalTime}}</p>
     <button ng-click="$ctrl.fave(item)">Fave</button>
 </div>

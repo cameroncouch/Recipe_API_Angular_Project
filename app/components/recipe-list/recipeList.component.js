@@ -4,18 +4,32 @@ const recipeList = {
     controller: ["AppService", function(AppService) {
         const vm = this;
         vm.shown = false;
+        vm.error = true;
         vm.$onInit = function() {
-            vm.result = AppService.Get();
+            AppService.Get().then(function(dtm){
+                vm.result = dtm;
+
+                if (vm.result.data.count == 0) {
+                    vm.error = false;
+                    console.log(vm.error);
+                }
+                else {
+                    vm.error = true;
+                    console.log(vm.error);
+                }
+
+            });
+            console.log("dsye5sges");
         }
 
         vm.fave = function(item) {
             AppService.addFave(item);
-            console.log(item)
+            //console.log(item)
         }
         vm.show = function(item) {
             vm.focused = item;
             vm.shown = true;
-            console.log(vm.shown);
+            //console.log(vm.shown);
         }
     }]
 };
