@@ -8,6 +8,7 @@ function AppService($location, $http) {
         //console.log(input)
         $location.path("/recipeList");
         self.data =  $http.get("https://api.edamam.com/search?q="+input+"&app_id="+appID+"&app_key="+key);
+        console.log(self.data);
         }
   
         self.Get = function(){
@@ -17,15 +18,9 @@ function AppService($location, $http) {
         self.addFave = function(item) {
 
             for(let i = 0; i < self.faveArray.length; i++){
-                
-                //console.log();
-
                 if(item == self.faveArray[i]){
-
                     return;
-
                 }
-
             }
 
             self.faveArray.push(item)
@@ -40,7 +35,6 @@ function AppService($location, $http) {
         self.deleteFave = function (newArray) {
             self.faveArray = newArray;
         }
-
     }
 
 angular.module("App").service("AppService", AppService);

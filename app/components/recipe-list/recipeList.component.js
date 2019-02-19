@@ -3,7 +3,7 @@ const recipeList = {
     templateUrl:"/app/components/recipe-list/recipeList.html",
     controller: ["AppService", function(AppService) {
         const vm = this;
-
+        vm.shown = false;
         vm.$onInit = function() {
             vm.result = AppService.Get();
         }
@@ -12,7 +12,11 @@ const recipeList = {
             AppService.addFave(item);
             console.log(item)
         }
-
+        vm.show = function(item) {
+            vm.focused = item;
+            vm.shown = true;
+            console.log(vm.shown);
+        }
     }]
 };
 

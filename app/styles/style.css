@@ -4,3 +4,17 @@ img {
     background-color: grey;
     display: block;
 }
+.itemdetail p {
+    font-size: 10px;
+}
+.itemdetail {
+    height: max-content;
+    width: 50%;
+    position: fixed;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid orange;
+    background-color: rgba(255,255,255,0.8);
+}

@@ -4,7 +4,7 @@ const searchCriteria = {
     controller: ["AppService", "$location", function(AppService, $location) {
         const vm = this;
         vm.search = function() {
-           // console.log(vm.input);
+           console.log(vm.input);
         AppService.Search(vm.input);
 
             // const results = AppService.Get();
