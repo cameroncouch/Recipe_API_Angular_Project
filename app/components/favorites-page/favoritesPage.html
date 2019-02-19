@@ -1,5 +1,13 @@
 <div ng-repeat="item in $ctrl.faveArray track by $index">
-    <h2>{{item.recipe.label}}</h2>
-    <img src={{item.recipe.image}}>
+    <h2 ng-click="$ctrl.show(item);">{{item.recipe.label}}</h2>
+    <img ng-click="$ctrl.show(item);" src={{item.recipe.image}}>
     <button ng-click="$ctrl.delete($index)">Clear</button>
+</div>
+<div ng-show="$ctrl.shown" class="itemdetail">
+        <p ng-click="$ctrl.shown = false">X</p>
+        <img src={{$ctrl.focused.recipe.image}}>
+        <p>{{$ctrl.focused.recipe.label}}</p>
+        <p>{{$ctrl.focused.recipe.calories}}</p>
+        <p>{{$ctrl.focused.recipe.ingredientLines}}</p>
+        <a href="{{$ctrl.focused.recipe.url}}">Visit Website</a>
 </div>
