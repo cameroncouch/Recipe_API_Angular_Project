@@ -1,7 +1,13 @@
 <form ng-submit="$ctrl.search()">	
     <input ng-model = "$ctrl.input">
     <button>Search Recipes</button>
-    <select>
-        <option ng-model="filter">Dairy Free</option>
+    <select ng-model = "$ctrl.id">
+        <option value = "0">Vegan</option>
+        <option value = "1">Alcohol Free</option>
+        <option value = "2">Peanut Free</option>
+        <option value = "3">Shellfish Free</option>
     </select>
 </form>
+
+
+
