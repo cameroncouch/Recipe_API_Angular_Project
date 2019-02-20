@@ -13,10 +13,10 @@
 <div ng-show="$ctrl.shown" class="itemdetail">
         <img class="popUpImg" src={{$ctrl.focused.recipe.image}}>
         <div class="popUpTxt">
-            <i class="material-icons md-36" ng-click="$ctrl.shown = false">close</i>
-            <p>{{$ctrl.focused.recipe.label}}</p>
-            <p>{{$ctrl.focused.recipe.calories}}</p>
+            <i class="material-icons md-36 close" ng-click="$ctrl.shown = false">close</i>
+            <h3>{{$ctrl.focused.recipe.label}}</h3>
+            <p>Calories: {{$ctrl.focused.recipe.calories | number: 0}}</p>
             <p>{{$ctrl.focused.recipe.ingredientLines}}</p>
-            <a href="{{$ctrl.focused.recipe.url}}">Visit Website</a>
+            <a style="text-decoration: none" href="{{$ctrl.focused.recipe.url}}">Click here to see recipe</a>
         </div>
     </div>

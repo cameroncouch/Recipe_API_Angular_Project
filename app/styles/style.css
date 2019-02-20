@@ -33,18 +33,21 @@ nav {
 .navLink {
     flex: 14;
     text-decoration: none;
+    font-size: 24px;
 }
 
 .header {
     flex: 1;
     text-align: center;
     z-index: 5;
+    font-size: 24px;
 }
 a:visited {
     color: #000000;
 }
 a:hover {
     text-shadow: 0px 1px grey;
+    color: red;
 }
 search-criteria {
     position: absolute;
@@ -56,6 +59,7 @@ form {
     padding: 50px;
     background-color: #FFFFFF;
     border-radius: 8px;
+    border: solid 3px #5f686b;
 }
 /* Recipe Cards */
 .container {
@@ -66,16 +70,34 @@ form {
     margin-left: auto;
     margin-right: auto;
 }
+.error{
 
+    position: absolute;
+    top: 170px;
+    transform: translateY(-50%);
+
+    text-shadow: 2px 2px white;
+
+    font-size: 50px;
+
+}
+.close{
+    position: relative;
+    left: 90%;
+}
 .recipeCard {
     border: 3px solid rgb(92, 13, 13);
-    background-color: rgb(180, 144, 144);
+    background-color: rgb(248, 248, 248);
     height: 30%;
     width: 20%;
     font-size: 18px;
     margin: 20px;
     text-align: center;
     border-radius: 8px;
+}
+.recipeTitle:hover{
+    color: red;
+    cursor: pointer;
 }
 .cook {
     margin-top: 20px;
@@ -89,7 +111,9 @@ h2 {
     height: 48px;
 }
 input {
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    border: none;
+    border-bottom: 1px solid rgb(153, 153, 153);
 }
 select {
     -webkit-appearance: menulist; 
@@ -113,11 +137,11 @@ button {
 }
 
 .material-icons {
-    color: rgb(228, 205, 0);
+    color:  rgb(150, 67, 67);
 }
 
 .material-icons:hover{
-    color: rgb(150, 136, 17);
+    color:#ff0000;
 }
 
 .imgmain {
@@ -130,6 +154,8 @@ button {
     bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 /* PopUP */
