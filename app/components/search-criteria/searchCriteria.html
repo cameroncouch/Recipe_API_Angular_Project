@@ -1,20 +1,17 @@
-<form ng-submit="$ctrl.search()">	
-    <input ng-model = "$ctrl.input">
-    <button>Search Recipes</button>
-    <select ng-model = "$ctrl.id">
-        <option value = "0">Vegan</option>
-        <option value = "1">Alcohol Free</option>
-        <option value = "2">Peanut Free</option>
-        <option value = "3">Shellfish Free</option>
+<form ng-submit="$ctrl.search()">
+    <input ng-model="$ctrl.input">
+    <select ng-model="$ctrl.id">
+        <option value="0">Vegan</option>
+        <option value="1">Alcohol Free</option>
+        <option value="2">Peanut Free</option>
+        <option value="3">Sugar Conscious</option>
+
     </select>
-    <select ng-model = "$ctrl.idx">
-            <option value = "0">Balanced</option>
-            <option value = "1">High Fiber</option>
-            <option value = "2">High Protein</option>
-            <option value = "3">Low Carb</option>
-            <option value = "4">Low Fat</option>
-            <option value = "5">Low Sodium</option>
-        </select>
+    <select ng-model="$ctrl.idx">
+        <option value="0">Balanced</option>
+        <option value="1">High Protein</option>
+        <option value="2">Low Carb</option>
+        <option value="3">Low Fat</option>
+    </select>
+    <button>Search Recipes</button>
 </form>
-
-

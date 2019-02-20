@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="app/styles/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <title>Recipe Project</title>
 </head>
 <body>
 
-<a href="#!/searchCriteria">Search</a>
-<a href="#!/recipeList">Recipes</a>
-<a href="#!/favoritesPage">Favorites</a>    
+<nav>
+    <h1 class="navChild header">Our Food Site</h1>
+    <a class="navChild navLink" href="#!/searchCriteria">Search</a>
+    <a class="navChild navLink" href="#!/recipeList">Recipes</a>
+    <a class="navChild navLink" href="#!/favoritesPage">Favorites</a>    
+</nav>
 
 <ng-view></ng-view>
 

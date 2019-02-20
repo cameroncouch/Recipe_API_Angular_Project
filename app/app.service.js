@@ -3,9 +3,9 @@ function AppService($location, $http) {
     const self = this;
     const key = "4d7a3e8fb6166e54fb00f65b193aa1aa";
     const appID = "c471afec";    
-    const healthSearch = ["vegan", "alcohol-free", "peanut-free", "shellfish-free"] // array for the health filter option
-    const dietSearch = ["balanced", "high-fiber", "high-protein", "low-carb", "low-fat", "low-sodium" ] //array for the diet filter options
-    self.faveArray = []; //array where foods tht are faved are pushed
+    const healthSearch = ["vegan", "alcohol-free", "peanut-free", "sugar-conscious"] // array for the health filter option
+    const dietSearch = ["balanced","high-protein", "low-carb", "low-fat"] //array for the diet filter options
+    self.faveArray = []; //array where foods that are faved are pushed
     self.Search = function(input, id, idx)  {
 
         self.health = (id ? "&health=" + healthSearch[Number(id)] : "" ); //If-else statement that governs empty filter options
