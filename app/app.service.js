@@ -13,7 +13,7 @@ function AppService($location, $http) {
         //search function
         $location.path("/recipeList");
         self.data =  $http.get("https://api.edamam.com/search?q="+input+"&app_id="+appID+"&app_key="+key+self.health+self.diet); 
-        
+        console.log(self.data);
         }
         
         self.Get = function(){

@@ -17,9 +17,9 @@ const recipeList = {
                     vm.error = true;
                     console.log(vm.error);
                 }
-
+            
             });
-            console.log("dsye5sges");
+           
         }
 
         vm.fave = function(item) {

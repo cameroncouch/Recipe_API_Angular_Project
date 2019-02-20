@@ -2,26 +2,44 @@ html,
 body {
     height: 100%;
     font-family: 'Indie Flower', cursive;
-    background-image: url(http://clipart-library.com/img/874470.jpg);
+    background-image: url(/app/cuttingboard.png);
+    background-attachment: fixed;
+    background-size: cover;
+    /* background-repeat: repeat-y; */
 }
 
+/* Nav Bar */
 nav {
 
     display: flex;
     align-items: center;
-    background-color: #91deff;
+    justify-content: flex-end;
+    background-color: #ffffff;
     border-radius: 5px;
-    border: 2px solid #00a0e5;
+    border: 2px solid #5f686b;
 }
 
+.group {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: -75px;
+    left: 5px;
+}
+.linkwrap {
+    display: flex;
+    flex: 1;
+    width: 50%;
+}
 .navLink {
     flex: 14;
     text-decoration: none;
 }
 
 .header {
-    width: 50%;
-    margin: 10px;
+    flex: 1;
+    text-align: center;
+    z-index: 5;
 }
 
 /* Recipe Cards */
@@ -34,16 +52,26 @@ nav {
 }
 
 .recipeCard {
-    border: 2px solid green;
-    background-color: rgb(191, 240, 212, .5);
+    border: 3px solid rgb(92, 13, 13);
+    background-color: rgb(255, 224, 224);
     height: 30%;
     width: 20%;
-    font-size: 10px;
+    font-size: 18px;
     margin: 20px;
     text-align: center;
     border-radius: 8px;
 }
-
+.cook {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.cal {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h2 {
+    height: 48px;
+}
 input {
     border-radius: 5px;
 }
@@ -53,21 +81,27 @@ select {
 
 button {
     border: transparent;
-    background-color: none;
+    background-color:  rgba(228, 205, 0, 0);;
     font-weight: bold;
-    height: max-content;
-    width: max-content;
     margin: 0;
     padding: 0;
     text-align: center;
+    outline: none;
+    display: block;
 }
 
-
+/* Meterial Icon Button */
+.material-icons.md-36 { 
+    font-size: 36px; 
+    width: 36px;
+}
 
 .material-icons {
-    color: rgb(240, 25, 25);
-    width: 24px;
+    color: rgb(228, 205, 0);
+}
 
+.material-icons:hover{
+    color: rgb(150, 136, 17);
 }
 
 .imgmain {
@@ -75,8 +109,9 @@ button {
     width: 170px;
     background-color: grey;
     display: block;
-
     position: relative;
+    top: 14px;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -84,6 +119,7 @@ button {
 /* PopUP */
 .itemdetail p {
     font-size: 18px;
+    margin: 5px;
 }
 
 .itemdetail {
@@ -95,9 +131,10 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 10px solid orange;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: 8px solid rgb(92, 13, 13);
+    background-color: rgba(255, 255, 255);
     display: flex;
+    border-radius: 8px;
 }
 
 .popUpImg {

@@ -2,8 +2,9 @@
         <div class="recipeCard" ng-repeat="item in $ctrl.faveArray track by $index">
             <h2 class="recipeTitle" ng-click="$ctrl.show(item);">{{item.recipe.label}}</h2>
             <img class="imgmain" ng-click="$ctrl.show(item);" src={{item.recipe.image}}>
-            <p>{{item.recipe.totalTime}}</p>
-            <button ng-click="$ctrl.delete($index)"><i class="material-icons">
+            <p class="cook">Prep/Cook Time: {{item.recipe.totalTime || "15"}} minute(s)</p>
+            <p class="cal">Calories: {{item.recipe.calories | number: 0}}</p>
+            <button ng-click="$ctrl.delete($index)"><i class="material-icons md-36">
                     delete_forever
                 </i></button>
         </div>
@@ -12,7 +13,7 @@
 <div ng-show="$ctrl.shown" class="itemdetail">
         <img class="popUpImg" src={{$ctrl.focused.recipe.image}}>
         <div class="popUpTxt">
-            <i class="material-icons" ng-click="$ctrl.shown = false">close</i>
+            <i class="material-icons md-36" ng-click="$ctrl.shown = false">close</i>
             <p>{{$ctrl.focused.recipe.label}}</p>
             <p>{{$ctrl.focused.recipe.calories}}</p>
             <p>{{$ctrl.focused.recipe.ingredientLines}}</p>
