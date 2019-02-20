@@ -10,7 +10,6 @@ body {
 
 /* Nav Bar */
 nav {
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -20,7 +19,7 @@ nav {
 }
 
 .group {
-    height: 300px;
+    height: 325px;
     width: 300px;
     position: absolute;
     top: -75px;
@@ -41,19 +40,36 @@ nav {
     text-align: center;
     z-index: 5;
 }
-
+a:visited {
+    color: #000000;
+}
+a:hover {
+    text-shadow: 0px 1px grey;
+}
+search-criteria {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+form {
+    padding: 50px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
 /* Recipe Cards */
 .container {
     display: flex;
     flex-flow: wrap;
     justify-content: left;
+    margin-top: 45px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .recipeCard {
     border: 3px solid rgb(92, 13, 13);
-    background-color: rgb(255, 224, 224);
+    background-color: rgb(180, 144, 144);
     height: 30%;
     width: 20%;
     font-size: 18px;
@@ -90,7 +106,7 @@ button {
     display: block;
 }
 
-/* Meterial Icon Button */
+/* Material Icon Button */
 .material-icons.md-36 { 
     font-size: 36px; 
     width: 36px;
