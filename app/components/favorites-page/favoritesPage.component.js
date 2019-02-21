@@ -10,9 +10,11 @@ const favoritesPage = {
         }
         // delete from faveArray
         vm.delete = (idx) => {
-            vm.faveArray[idx].bookmarked = false;
-            vm.faveArray.splice(idx, 1);
-            AppService.deleteFave(vm.faveArray);
+            //vm.faveArray[idx].bookmarked = false;
+            //vm.faveArray.splice(idx, 1);
+            //AppService.deleteFave(vm.faveArray);
+            AppService.deleteTempFav(idx);
+            vm.faveArray = AppService.getFave();
         }
         // pop up behavior within faveArray
         vm.show = (item) => {
