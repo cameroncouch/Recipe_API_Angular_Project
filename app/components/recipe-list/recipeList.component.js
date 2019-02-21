@@ -5,7 +5,7 @@ const recipeList = {
         const vm = this;
         vm.shown = false;
         vm.error = true;
-        vm.$onInit = function() {
+        vm.$onInit = () => {
             AppService.Get().then(function(dtm){
                 vm.result = dtm;
 
@@ -15,21 +15,16 @@ const recipeList = {
                 else {
                     vm.error = true;
                 }
-            
+                console.log(vm.result);
             });
            
         }
-        // vm.faveClass = function(item) {
-        //     for(let i = 0; i < AppService.faveArray.length; i++) {
-        //         if (item == AppService.faveArray[i]) {
-        //             console.log(item);
-        //             console.log(AppService.faveArray[i])
-        //             return true;
-        //         }
-        //     }
-        //     return false;
-        // }
-        vm.fave = function(item) {
+        vm.divide = (num) => {
+            console.log(num);
+            return String(Number(num) / 6);
+        }
+       
+        vm.fave = (item) => {
             if(!item.bookmarked){
                 item.bookmarked = true;
                 AppService.addFave(item);
@@ -38,16 +33,9 @@ const recipeList = {
                 AppService.deleteTempFav(item);
             }
         }
-        vm.show = function(item) {
+        vm.show = (item) => {
             vm.focused = item;
             vm.shown = true;
-        }
-        vm.listItems = function(itemList){
-            vm.List = "";
-            for(let i = 0; i < itemList.length -1; i++){
-                vm.List = vm.List + "• " + itemList[i] + "\n";
-            }
-            return vm.List;
         }
     }]
 };

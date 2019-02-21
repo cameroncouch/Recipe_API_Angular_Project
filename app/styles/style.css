@@ -5,10 +5,9 @@ body {
     background-image: url(/app/cuttingboard.png);
     background-attachment: fixed;
     background-size: cover;
-    /* background-repeat: repeat-y; */
 }
 
-/* Nav Bar */
+/* ################ Navigstion Bar ######################### */
 nav {
     display: flex;
     align-items: center;
@@ -61,7 +60,7 @@ form {
     border-radius: 8px;
     border: solid 3px #5f686b;
 }
-/* Recipe Cards */
+/* ################Recipe Cards################### */
 .container {
     display: flex;
     flex-flow: wrap;
@@ -71,16 +70,13 @@ form {
     margin-right: auto;
 }
 .error{
-
     position: absolute;
     top: 170px;
     transform: translateY(-50%);
-
     text-shadow: 2px 2px white;
-
     font-size: 50px;
-
 }
+
 .close{
     position: relative;
     left: 90%;
@@ -149,7 +145,19 @@ button {
 .faved {
     color: #ff0000;
 }
-
+.favfilter {
+    background-color: white;
+    border: solid 3px #5f686b;
+    padding: 10px;
+    border-radius: 8px;
+    position: absolute;
+    left: 75%;
+    transform: translate(-50%);
+    top: 12%;
+}
+.favfilter p {
+    display: inline;
+}
 .imgmain {
     height: 170px;
     width: 170px;

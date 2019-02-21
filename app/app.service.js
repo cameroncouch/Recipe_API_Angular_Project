@@ -13,38 +13,33 @@ function AppService($location, $http) {
         //search function
         $location.path("/recipeList");
         self.data =  $http.get("https://api.edamam.com/search?q="+input+"&from=0&to=4&app_id="+appID+"&app_key="+key+self.health+self.diet); 
-        // console.log(self.data);
         }
         
-        self.Get = function(){
+        self.Get = () => {
             return self.data;
         }
 
-        self.addFave = function(item) {
-
+        self.addFave = (item) => {
             for(let i = 0; i < self.faveArray.length; i++){
                 if(item == self.faveArray[i]){
-                    return;
-                }
+                    return;                }
             }
-           // console.log(self.faveArray);
             self.faveArray.push(item)
         }
 
-        self.getFave = function () {
+        self.getFave = () => {
             return self.faveArray;
         }
 
-        self.deleteFave = function (newArray) {
+        self.deleteFave = (newArray) => {
             self.faveArray = newArray;
             newArray = self.faveArray;
         }
 
-        self.deleteTempFav = function (item) {
+        self.deleteTempFav = (item) => {
             for(let i = 0; i < self.faveArray.length; i++){
                 if(item == self.faveArray[i]){
                     self.faveArray.splice(i, 1);
-
                 }
             }
             console.log(self.faveArray);
@@ -52,8 +47,3 @@ function AppService($location, $http) {
     }
 
 angular.module("App").service("AppService", AppService);
-
-
-//working code for search before .then added
-// $location.path("/recipeList");
-// self.data =  $http.get("https://api.edamam.com/search?q="+input+"&app_id="+appID+"&app_key="+key+self.health+self.diet); 

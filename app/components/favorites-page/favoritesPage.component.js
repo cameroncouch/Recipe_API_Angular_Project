@@ -5,22 +5,26 @@ const favoritesPage = {
     controller: ["AppService", function(AppService) {
         const vm = this;
         vm.shown = false;
-        vm.$onInit = function() {
+        vm.$onInit = () => {
             vm.faveArray = AppService.getFave();
         }
-        vm.delete = function (idx) {
+        vm.delete = (idx) => {
             vm.faveArray[idx].bookmarked = false;
             vm.faveArray.splice(idx, 1);
             AppService.deleteFave(vm.faveArray);
         }
 
-        vm.show = function(item) {
+        vm.show = (item) => {
             vm.focused = item;
             vm.shown = true;
         }
         
-        vm.setTempFave = function(newArray) {
+        vm.setTempFave = (newArray) => {
             vm.faveArray = newArray;
+        }
+        vm.divide = (num) => {
+            console.log(num);
+            return String(Number(num) / 6);
         }
     }]
 };

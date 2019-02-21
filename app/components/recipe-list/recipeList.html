@@ -4,7 +4,7 @@
         <h2 class="recipeTitle" ng-click="$ctrl.show(item);">{{item.recipe.label}}</h2>
         <img class="imgmain" ng-click="$ctrl.show(item);" src={{item.recipe.image}}>
         <p class="cook">Prep/Cook Time: {{item.recipe.totalTime || "15"}} minute(s)</p>
-        <p class="cal">Calories: {{item.recipe.calories | number: 0}}</p>
+        <p class="cal">Calories/serving: {{$ctrl.divide(item.recipe.calories) | number: 0}}</p>
         <button class="fave_btn" ng-click="$ctrl.fave(item)"><i ng-class="{faved:item.bookmarked}" class="material-icons md-36">
                 star_rate
             </i></button>
@@ -15,11 +15,19 @@
     <div class="popUpTxt">
         <i class="material-icons md-36 close" ng-click="$ctrl.shown = false">close</i>
         <h3>{{$ctrl.focused.recipe.label}}</h3>
-        <p>Calories: {{$ctrl.focused.recipe.calories | number: 0}}</p>
-        <p class="scrollable">{{$ctrl.listItems($ctrl.focused.recipe.ingredientLines)}}</p>
+        <p>Calories/serving: {{$ctrl.divide($ctrl.focused.recipe.calories) | number: 0}}</p>
+
+        <div class="scrollable">
+            <p ng-repeat = "listItem in $ctrl.focused.recipe.ingredientLines track by $index">• {{listItem.replace("undefined", "1 teaspoon Love")}}</p>
+        </div>
+
         <a target="_blank" style="text-decoration: none" href="{{$ctrl.focused.recipe.url}}">Click here to see recipe</a>
         <button class="fave_btn" ng-click="$ctrl.fave($ctrl.focused)"><i ng-class="{faved:$ctrl.focused.bookmarked}" class="material-icons md-36">
                 star_rate
             </i></button>
     </div>
 </div>
+
+
+
+<!-- cszgvfdzzvdabaddfbdegsgesgehgbets -->
