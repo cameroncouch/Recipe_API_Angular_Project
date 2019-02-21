@@ -5,8 +5,8 @@ const searchCriteria = {
         const vm = this;
         // search funtionality
         vm.search = () => {
-             AppService.Search(vm.input, vm.id, vm.idx);
-
+            AppService.resetCount(12);
+            AppService.Search(vm.input, vm.id, vm.idx);
         }
     }]
 };

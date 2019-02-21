@@ -6,14 +6,16 @@ function AppService($location, $http) {
     const healthSearch = ["vegan", "alcohol-free", "peanut-free", "sugar-conscious"] // array for the health filter option
     const dietSearch = ["balanced","high-protein", "low-carb", "low-fat"] //array for the diet filter options
     self.faveArray = []; //array where foods that are faved are pushed
-    self.Search = function(input, id, idx)  {
+    self.loadCount = 12;
+    self.Search = function(input, id, idx) {
 
         self.health = (id ? "&health=" + healthSearch[Number(id)] : "" ); //If-else statement that governs empty filter options
         self.diet   = (idx ? "&diet="  +  dietSearch[Number(idx)] : "" );
         //search function and http req.
         $location.path("/recipeList");
-        self.data =  $http.get("https://api.edamam.com/search?q="+input+"&from=0&to=24&app_id="+appID+"&app_key="+key+self.health+self.diet); 
-        }
+        self.data =  $http.get("https://api.edamam.com/search?q="+input+"&from=0&to="+self.loadCount+"&app_id="+appID+"&app_key="+key+self.health+self.diet);
+
+    }
         //returns our promise, that is stored in the variable
         self.Get = () => {
             return self.data;
@@ -43,6 +45,17 @@ function AppService($location, $http) {
                 }
             }
         }
+
+        self.loadMore = () => {
+            self.loadCount = self.loadCount + 4;
+            console.log(self.loadCount);
+            self.Search();
+        }
+
+        self.resetCount = (num) => {
+            self.loadCount = num;
+        }
+
     }
 
 angular.module("App").service("AppService", AppService);

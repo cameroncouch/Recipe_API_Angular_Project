@@ -35,6 +35,24 @@ select {
     top: -75px;
     left: 5px;
 }
+/* ######## Mouse enter to "smack the logo around" */
+.logo:hover {
+    animation: shake .5s;
+    cursor: grab;
+}
+@keyframes shake {
+    0% { transform: rotate(5deg); }
+    10% { transform: rotate(0deg); }
+    20% { transform: rotate(0deg); }
+    30% { transform: rotate(0deg); }
+    40% { transform: rotate(0deg); }
+    50% { transform: rotate(-5deg); }
+    60% { transform: rotate(0deg); }
+    70% { transform: rotate(0deg); }
+    80% { transform: rotate(0deg); }
+    90% { transform: rotate(0deg); }
+    100% { transform: rotate(5deg); }
+  }
 nav {
     display: flex;
     align-items: center;
@@ -44,10 +62,12 @@ nav {
     border: 2px solid #5f686b;
 }
 .header {
+    font-family:'Oleo Script Swash Caps', cursive;
     flex: 1;
     text-align: center;
     z-index: 5;
     font-size: 24px;
+    text-shadow: -1px -1px 1px white, -2px -2px 5px rgb(92, 13, 13); 
 }
 .linkwrap {
     display: flex;
@@ -79,6 +99,14 @@ form {
     border-radius: 8px;
     border: solid 3px #5f686b;
 }
+.loadmore {
+    font-family: 'Indie Flower', cursive;
+    font-size: 24px;
+    position: relative;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%)
+}
 /* ################Recipe Cards################### */
 .error{
     position: absolute;
@@ -90,7 +118,7 @@ form {
 .container {
     display: flex;
     flex-flow: wrap;
-    justify-content: left;
+    justify-content: space-between;
     margin-top: 45px;
     margin-left: auto;
     margin-right: auto;
@@ -106,7 +134,7 @@ form {
     border-radius: 8px;
 }
 .recipeTitle {
-    border-bottom: 2px dashed (150, 67, 67);
+    overflow-y: hidden;
 }
 .recipeTitle:hover{
     color: red;
@@ -126,7 +154,7 @@ form {
     cursor: pointer;
 }
 h2 {
-    height: 48px;
+    height: 80px;
 }
 .cook {
     margin-top: 20px;

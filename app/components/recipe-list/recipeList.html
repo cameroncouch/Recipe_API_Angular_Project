@@ -12,6 +12,11 @@
         </button>
     </div>
 </section>
+
+<button class="loadmore" ng-click="$ctrl.loadMore()">Load More
+    <i style="color: black; display: inline; position: relative; top: 11px;" class="material-icons md-36">keyboard_arrow_down</i>
+</button>
+
 <!-- This is the hidden div that shows upon "clickthrough" of the recipe card -->
 <div ng-show="$ctrl.shown" class="itemdetail">
     <img class="popUpImg" src={{$ctrl.focused.recipe.image}}>

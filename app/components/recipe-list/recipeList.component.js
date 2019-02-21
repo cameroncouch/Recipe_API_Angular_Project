@@ -1,11 +1,12 @@
 "use strict";
 const recipeList = {
     templateUrl:"/app/components/recipe-list/recipeList.html",
-    controller: ["AppService", function(AppService) {
+    controller: ["AppService", "$location", function(AppService, $location) {
         const vm = this;
         // these variables are used in hide/show functionality
         vm.shown = false;
         vm.error = true;
+
         vm.$onInit = () => {
             AppService.Get().then(function(dtm){
                 vm.result = dtm;
@@ -16,13 +17,11 @@ const recipeList = {
                 else {
                     vm.error = true;
                 }
-                console.log(vm.result);
+
             });
-           
         }
         //takes the returned value of the calorie property, and divides by 6 for an estimated serving size cal count
         vm.divide = (num) => {
-            console.log(num);
             return String(Number(num) / 6);
         }
        //takes the given property bookmarked, and utilizes it for a styling state when an item exists in our fave array
@@ -41,6 +40,12 @@ const recipeList = {
                 vm.focused = item;
                 vm.shown = true;
         }
+
+        vm.loadMore = () => {
+            AppService.loadMore();
+            vm.$onInit();
+        }
+
     }]
 };
 
