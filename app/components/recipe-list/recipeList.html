@@ -1,33 +1,33 @@
+<!-- Message that populates when response contains count=0 -->
 <h1 class="error" ng-hide="$ctrl.error">No results found, search again.</h1>
+<!-- This is our individual recipe card per response object -->
 <section class="container">
     <div class="recipeCard" ng-repeat="item in $ctrl.result.data.hits">
         <h2 class="recipeTitle" ng-click="$ctrl.show(item);">{{item.recipe.label}}</h2>
         <img class="imgmain" ng-click="$ctrl.show(item);" src={{item.recipe.image}}>
         <p class="cook">Prep/Cook Time: {{item.recipe.totalTime || "15"}} minute(s)</p>
         <p class="cal">Calories/serving: {{$ctrl.divide(item.recipe.calories) | number: 0}}</p>
-        <button class="fave_btn" ng-click="$ctrl.fave(item)"><i ng-class="{faved:item.bookmarked}" class="material-icons md-36">
-                star_rate
-            </i></button>
+        <button class="fave_btn" ng-click="$ctrl.fave(item)">
+            <i ng-class="{faved:item.bookmarked}"class="material-icons md-36">star_rate</i>
+        </button>
     </div>
 </section>
+<!-- This is the hidden div that shows upon "clickthrough" of the recipe card -->
 <div ng-show="$ctrl.shown" class="itemdetail">
     <img class="popUpImg" src={{$ctrl.focused.recipe.image}}>
     <div class="popUpTxt">
         <i class="material-icons md-36 close" ng-click="$ctrl.shown = false">close</i>
         <h3>{{$ctrl.focused.recipe.label}}</h3>
         <p>Calories/serving: {{$ctrl.divide($ctrl.focused.recipe.calories) | number: 0}}</p>
-
+        <!-- This div holds the recipe ingredients, and overflow is handled with a scroll behavior  -->
         <div class="scrollable">
-            <p ng-repeat = "listItem in $ctrl.focused.recipe.ingredientLines track by $index">• {{listItem.replace("undefined", "1 teaspoon Love")}}</p>
+            <p ng-repeat="listItem in $ctrl.focused.recipe.ingredientLines track by $index">•
+                {{listItem.replace("undefined", "1 teaspoon Love")}}</p>
         </div>
-
-        <a target="_blank" style="text-decoration: none" href="{{$ctrl.focused.recipe.url}}">Click here to see recipe</a>
-        <button class="fave_btn" ng-click="$ctrl.fave($ctrl.focused)"><i ng-class="{faved:$ctrl.focused.bookmarked}" class="material-icons md-36">
-                star_rate
-            </i></button>
+        <a target="_blank" style="text-decoration: none" href="{{$ctrl.focused.recipe.url}}">Click here to see
+            recipe</a>
+        <button class="fave_btn" ng-click="$ctrl.fave($ctrl.focused)">
+            <i ng-class="{faved:$ctrl.focused.bookmarked}" class="material-icons md-36">star_rate</i>
+        </button>
     </div>
 </div>
-
-
-
-<!-- cszgvfdzzvdabaddfbdegsgesgehgbets -->

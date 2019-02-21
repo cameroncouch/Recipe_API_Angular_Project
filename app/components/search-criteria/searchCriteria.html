@@ -1,6 +1,8 @@
+<!-- Search form on landing page -->
 <form ng-submit="$ctrl.search()">
     <input placeholder = "Recipes await!" ng-model="$ctrl.input">
     <p style="display: inline">Restriction: </p>
+<!-- Filter dropdown #1 -->
     <select name="Stuff" ng-model="$ctrl.id">
         <option value="">--Choose--</option>
         <option value="0">Vegan</option>
@@ -8,6 +10,7 @@
         <option value="2">Peanut Free</option>
         <option value="3">Sugar Conscious</option>
     </select>
+<!-- Filter dropdown #2 -->
     <p style="display:inline">Diets: </p>
     <select ng-model="$ctrl.idx">
         <option value="">--Choose--</option>

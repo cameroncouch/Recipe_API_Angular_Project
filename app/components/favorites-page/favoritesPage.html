@@ -1,30 +1,32 @@
+<!-- Input for searching/filtering through favorited recipe items -->
 <div class="favfilter">
-<p>Search your favorites here:</p>
-<input type="text" placeholder="Type here" ng-model="recipeName">
+    <p>Search your favorites here:</p>
+    <input type="text" placeholder="Type here" ng-model="recipeName">
 </div>
 
-
+<!-- Recipe card within the favorites page - code is copied from search-criteria page -->
 <section class="container">
-        <div class="recipeCard" ng-repeat="item in $ctrl.faveArray | filter : recipeName track by $index">
-            <h2 class="recipeTitle" ng-click="$ctrl.show(item);">{{item.recipe.label}}</h2>
-            <img class="imgmain" ng-click="$ctrl.show(item);" src={{item.recipe.image}}>
-            <p class="cook">Prep/Cook Time: {{item.recipe.totalTime || "15"}} minute(s)</p>
-            <p class="cal">Calories/serving: {{$ctrl.divide(item.recipe.calories) | number: 0}}</p>
-            <button ng-click="$ctrl.delete($index)"><i class="material-icons md-36">
-                    delete_forever
-                </i></button>
-        </div>
-    </section>
-
-<div ng-show="$ctrl.shown" class="itemdetail">
-        <img class="popUpImg" src={{$ctrl.focused.recipe.image}}>
-        <div class="popUpTxt">
-            <i class="material-icons md-36 close" ng-click="$ctrl.shown = false">close</i>
-            <h3>{{$ctrl.focused.recipe.label}}</h3>
-            <p>Calories/serving: {{$ctrl.divide($ctrl.focused.recipe.calories) | number: 0}}</p>
-            <div class="scrollable">
-                    <p ng-repeat = "listItem in $ctrl.focused.recipe.ingredientLines track by $index">• {{listItem.replace("undefined", "1 teaspoon Love")}}</p>
-            </div>
-            <a style="text-decoration: none" href="{{$ctrl.focused.recipe.url}}">Click here to see recipe</a>
-        </div>
+    <div class="recipeCard" ng-repeat="item in $ctrl.faveArray | filter : recipeName track by $index">
+        <h2 class="recipeTitle" ng-click="$ctrl.show(item);">{{item.recipe.label}}</h2>
+        <img class="imgmain" ng-click="$ctrl.show(item);" src={{item.recipe.image}}>
+        <p class="cook">Prep/Cook Time: {{item.recipe.totalTime || "15"}} minute(s)</p>
+        <p class="cal">Calories/serving: {{$ctrl.divide(item.recipe.calories) | number: 0}}</p>
+        <button ng-click="$ctrl.delete($index)">
+            <i class="material-icons md-36">delete_forever</i>
+        </button>
     </div>
+</section>
+<!-- Recipe card popped-up details -->
+<div ng-show="$ctrl.shown" class="itemdetail">
+    <img class="popUpImg" src={{$ctrl.focused.recipe.image}}>
+    <div class="popUpTxt">
+        <i class="material-icons md-36 close" ng-click="$ctrl.shown = false">close</i>
+        <h3>{{$ctrl.focused.recipe.label}}</h3>
+        <p>Calories/serving: {{$ctrl.divide($ctrl.focused.recipe.calories) | number: 0}}</p>
+        <div class="scrollable">
+        <p ng-repeat = "listItem in $ctrl.focused.recipe.ingredientLines track by $index">
+        • {{listItem.replace("undefined", "1 teaspoon Love")}}</p>
+    </div>
+        <a style="text-decoration: none" href="{{$ctrl.focused.recipe.url}}">Click here to see recipe</a>
+    </div>
+</div>

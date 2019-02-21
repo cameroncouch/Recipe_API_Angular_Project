@@ -10,15 +10,15 @@ function AppService($location, $http) {
 
         self.health = (id ? "&health=" + healthSearch[Number(id)] : "" ); //If-else statement that governs empty filter options
         self.diet   = (idx ? "&diet="  +  dietSearch[Number(idx)] : "" );
-        //search function
+        //search function and http req.
         $location.path("/recipeList");
-        self.data =  $http.get("https://api.edamam.com/search?q="+input+"&from=0&to=4&app_id="+appID+"&app_key="+key+self.health+self.diet); 
+        self.data =  $http.get("https://api.edamam.com/search?q="+input+"&from=0&to=24&app_id="+appID+"&app_key="+key+self.health+self.diet); 
         }
-        
+        //returns our promise, that is stored in the variable
         self.Get = () => {
             return self.data;
         }
-
+        //this checks to see if an item exists in our faveArray, prior to pushing it - pushes one of each item
         self.addFave = (item) => {
             for(let i = 0; i < self.faveArray.length; i++){
                 if(item == self.faveArray[i]){
@@ -27,22 +27,21 @@ function AppService($location, $http) {
             self.faveArray.push(item)
         }
 
+        //returns fave array
         self.getFave = () => {
             return self.faveArray;
         }
-
+        //deletes an item from fave array
         self.deleteFave = (newArray) => {
             self.faveArray = newArray;
-            newArray = self.faveArray;
         }
-
+        //allows user to delete from array while navigating the initial search results by on/off click of favorite icon
         self.deleteTempFav = (item) => {
             for(let i = 0; i < self.faveArray.length; i++){
                 if(item == self.faveArray[i]){
                     self.faveArray.splice(i, 1);
                 }
             }
-            console.log(self.faveArray);
         }
     }
 

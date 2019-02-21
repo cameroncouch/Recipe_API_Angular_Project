@@ -6,8 +6,35 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
-
-/* ################ Navigstion Bar ######################### */
+/* applies to sitewide styling */
+button {
+    border: transparent;
+    background-color:  rgba(228, 205, 0, 0);;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    outline: none;
+    display: block;
+}
+input {
+    /* border-radius: 5px; */
+    border: none;
+    border-bottom: 1px solid rgb(153, 153, 153);
+}
+select {
+    -webkit-appearance: menulist; 
+}
+/* Styling within static elements outside of the NG View */
+/* ################ Navigation Bar ######################### */
+.logo { 
+    /* logo */
+    height: 350px;
+    width: 300px;
+    position: absolute;
+    top: -75px;
+    left: 5px;
+}
 nav {
     display: flex;
     align-items: center;
@@ -16,13 +43,11 @@ nav {
     border-radius: 5px;
     border: 2px solid #5f686b;
 }
-
-.group {
-    height: 350px;
-    width: 300px;
-    position: absolute;
-    top: -75px;
-    left: 5px;
+.header {
+    flex: 1;
+    text-align: center;
+    z-index: 5;
+    font-size: 24px;
 }
 .linkwrap {
     display: flex;
@@ -34,13 +59,6 @@ nav {
     text-decoration: none;
     font-size: 24px;
 }
-
-.header {
-    flex: 1;
-    text-align: center;
-    z-index: 5;
-    font-size: 24px;
-}
 a:visited {
     color: #000000;
 }
@@ -48,6 +66,7 @@ a:hover {
     text-shadow: 1px 1px rgb(92, 13, 13);
     color: red;
 }
+/* Styling within NG View - Component Styling */
 search-criteria {
     position: absolute;
     left: 50%;
@@ -61,14 +80,6 @@ form {
     border: solid 3px #5f686b;
 }
 /* ################Recipe Cards################### */
-.container {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: left;
-    margin-top: 45px;
-    margin-left: auto;
-    margin-right: auto;
-}
 .error{
     position: absolute;
     top: 170px;
@@ -76,10 +87,13 @@ form {
     text-shadow: 2px 2px white;
     font-size: 50px;
 }
-
-.close{
-    position: relative;
-    left: 90%;
+.container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: left;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .recipeCard {
     border: 3px solid rgb(92, 13, 13);
@@ -98,6 +112,22 @@ form {
     color: red;
     cursor: pointer;
 }
+.imgmain {
+    height: 170px;
+    width: 170px;
+    background-color: grey;
+    display: block;
+    position: relative;
+    top: 14px;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    cursor: pointer;
+}
+h2 {
+    height: 48px;
+}
 .cook {
     margin-top: 20px;
     margin-bottom: 0;
@@ -106,29 +136,6 @@ form {
     margin-top: 0;
     margin-bottom: 0;
 }
-h2 {
-    height: 48px;
-}
-input {
-    /* border-radius: 5px; */
-    border: none;
-    border-bottom: 1px solid rgb(153, 153, 153);
-}
-select {
-    -webkit-appearance: menulist; 
-}
-
-button {
-    border: transparent;
-    background-color:  rgba(228, 205, 0, 0);;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    outline: none;
-    display: block;
-}
-
 /* Material Icon Button */
 .material-icons.md-36 { 
     font-size: 36px; 
@@ -145,39 +152,11 @@ button {
 .faved {
     color: #ff0000;
 }
-.favfilter {
-    background-color: white;
-    border: solid 3px #5f686b;
-    padding: 10px;
-    border-radius: 8px;
-    position: absolute;
-    left: 75%;
-    transform: translate(-50%);
-    top: 12%;
-}
-.favfilter p {
-    display: inline;
-}
-.imgmain {
-    height: 170px;
-    width: 170px;
-    background-color: grey;
-    display: block;
-    position: relative;
-    top: 14px;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 8px;
-    cursor: pointer;
-}
-
 /* PopUP */
 .itemdetail p {
     font-size: 18px;
     margin: 5px;
 }
-
 .itemdetail {
     height: max-content;
     width: 0 auto;
@@ -192,15 +171,24 @@ button {
     display: flex;
     border-radius: 8px;
 }
-
-.popUpImg {
-    width: 50%;
-}
-
-.popUpTxt {
-    margin: 10px;
-}
 .scrollable {
     height: 100px;
     overflow-y: scroll;
+}
+.close{
+    position: relative;
+    left: 90%;
+}
+.favfilter {
+    background-color: white;
+    border: solid 3px #5f686b;
+    padding: 10px;
+    border-radius: 8px;
+    position: absolute;
+    left: 75%;
+    transform: translate(-50%);
+    top: 12%;
+}
+.favfilter p {
+    display: inline;
 }

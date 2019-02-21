@@ -13,5 +13,6 @@ angular.module("App").config(["$routeProvider", function($routeProvider) {
     {
         template:"<favorites-page></favorites-page>"
     })
+    //landing defaults to our search page
     .otherwise({redirectTo: "/searchCriteria"});
 }]);
