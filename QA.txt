@@ -1,0 +1,29 @@
+Changes/bug fixes made after initial design doc was fulfilled. 
+
+QA Review Session
+1.	a-tag - change hover color to red
+2.	a-tag - increase the font-size
+3.	searchForm - change to flat design for the input
+4.	searchForm  - add labels on the dropdowns
+5.	searchForm - add to a border that matches the navbar
+6.	favorite star – change the color
+7.	image recipe card – add border radius
+8.	image recipe card – add a cursor type of pointer
+9.	recipe card – change background color to a shade of white
+10.	recipe card – add red hover to title
+11.	popout – remove brackets around ingredients
+12.	popout – remove the decimal places
+13.	popout – move the X to the top right of container
+14.	popout – change p-tag to header for title
+15.	popout – change the website hyperlink by removing text decoration, and text should read “click here to see recipe”
+16.	popout – add the favorite_btn
+17.	popout – link to website opens in new tab
+18.	popout – once favorite is added the star stays highlighted in the recipe list
+19.	error msg – needs to be repositioned and resized 
+20.	favorite page – add filter input
+21.	recipe card – size of ingredient list is enlarging popup added scroll bar
+22.	recipe page – add a next button to display addt’l recipes
+23.	favorite page popout – add delete trashcan
+24.	recipe card – divide calorie count by servings
+25.	logo – added a shake feature for the allusion of smacking it
+26.	title – added addtl styling to the title
