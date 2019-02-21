@@ -5,7 +5,7 @@
         <img class="imgmain" ng-click="$ctrl.show(item);" src={{item.recipe.image}}>
         <p class="cook">Prep/Cook Time: {{item.recipe.totalTime || "15"}} minute(s)</p>
         <p class="cal">Calories: {{item.recipe.calories | number: 0}}</p>
-        <button class="fave_btn" ng-click="$ctrl.fave(item)"><i class="material-icons md-36">
+        <button class="fave_btn" ng-click="$ctrl.fave(item)"><i ng-class="{faved:item.bookmarked}" class="material-icons md-36">
                 star_rate
             </i></button>
     </div>
@@ -16,9 +16,9 @@
         <i class="material-icons md-36 close" ng-click="$ctrl.shown = false">close</i>
         <h3>{{$ctrl.focused.recipe.label}}</h3>
         <p>Calories: {{$ctrl.focused.recipe.calories | number: 0}}</p>
-        <p>{{$ctrl.focused.recipe.ingredientLines}}</p>
-        <a style="text-decoration: none" href="{{$ctrl.focused.recipe.url}}">Click here to see recipe</a>
-        <button class="fave_btn" ng-click="$ctrl.fave($ctrl.focused)"><i class="material-icons md-36">
+        <p class="scrollable">{{$ctrl.listItems($ctrl.focused.recipe.ingredientLines)}}</p>
+        <a target="_blank" style="text-decoration: none" href="{{$ctrl.focused.recipe.url}}">Click here to see recipe</a>
+        <button class="fave_btn" ng-click="$ctrl.fave($ctrl.focused)"><i ng-class="{faved:$ctrl.focused.bookmarked}" class="material-icons md-36">
                 star_rate
             </i></button>
     </div>

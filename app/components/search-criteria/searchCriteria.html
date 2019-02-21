@@ -1,13 +1,16 @@
 <form ng-submit="$ctrl.search()">
-    <input placeholder = "Recipes await" ng-model="$ctrl.input">
+    <input placeholder = "Recipes await!" ng-model="$ctrl.input">
+    <p style="display: inline">Restriction: </p>
     <select name="Stuff" ng-model="$ctrl.id">
+        <option value="">--Choose--</option>
         <option value="0">Vegan</option>
         <option value="1">Alcohol Free</option>
         <option value="2">Peanut Free</option>
         <option value="3">Sugar Conscious</option>
     </select>
-
+    <p style="display:inline">Diets: </p>
     <select ng-model="$ctrl.idx">
+        <option value="">--Choose--</option>
         <option value="0">Balanced</option>
         <option value="1">High Protein</option>
         <option value="2">Low Carb</option>

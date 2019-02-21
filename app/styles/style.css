@@ -19,7 +19,7 @@ nav {
 }
 
 .group {
-    height: 325px;
+    height: 350px;
     width: 300px;
     position: absolute;
     top: -75px;
@@ -46,7 +46,7 @@ a:visited {
     color: #000000;
 }
 a:hover {
-    text-shadow: 0px 1px grey;
+    text-shadow: 1px 1px rgb(92, 13, 13);
     color: red;
 }
 search-criteria {
@@ -94,6 +94,9 @@ form {
     margin: 20px;
     text-align: center;
     border-radius: 8px;
+}
+.recipeTitle {
+    border-bottom: 2px dashed (150, 67, 67);
 }
 .recipeTitle:hover{
     color: red;
@@ -143,6 +146,9 @@ button {
 .material-icons:hover{
     color:#ff0000;
 }
+.faved {
+    color: #ff0000;
+}
 
 .imgmain {
     height: 170px;
@@ -185,4 +191,8 @@ button {
 
 .popUpTxt {
     margin: 10px;
+}
+.scrollable {
+    height: 100px;
+    overflow-y: scroll;
 }

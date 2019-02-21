@@ -11,25 +11,43 @@ const recipeList = {
 
                 if (vm.result.data.count == 0) {
                     vm.error = false;
-                    console.log(vm.error);
                 }
                 else {
                     vm.error = true;
-                    console.log(vm.error);
                 }
             
             });
            
         }
-
+        // vm.faveClass = function(item) {
+        //     for(let i = 0; i < AppService.faveArray.length; i++) {
+        //         if (item == AppService.faveArray[i]) {
+        //             console.log(item);
+        //             console.log(AppService.faveArray[i])
+        //             return true;
+        //         }
+        //     }
+        //     return false;
+        // }
         vm.fave = function(item) {
-            AppService.addFave(item);
-            //console.log(item)
+            if(!item.bookmarked){
+                item.bookmarked = true;
+                AppService.addFave(item);
+            }else{
+                item.bookmarked = false;
+                AppService.deleteTempFav(item);
+            }
         }
         vm.show = function(item) {
             vm.focused = item;
             vm.shown = true;
-            //console.log(vm.shown);
+        }
+        vm.listItems = function(itemList){
+            vm.List = "";
+            for(let i = 0; i < itemList.length -1; i++){
+                vm.List = vm.List + "• " + itemList[i] + "\n";
+            }
+            return vm.List;
         }
     }]
 };

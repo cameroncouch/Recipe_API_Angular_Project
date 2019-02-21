@@ -12,18 +12,12 @@ function AppService($location, $http) {
         self.diet   = (idx ? "&diet="  +  dietSearch[Number(idx)] : "" );
         //search function
         $location.path("/recipeList");
-        self.data =  $http.get("https://api.edamam.com/search?q="+input+"&app_id="+appID+"&app_key="+key+self.health+self.diet); 
-        console.log(self.data);
+        self.data =  $http.get("https://api.edamam.com/search?q="+input+"&from=0&to=4&app_id="+appID+"&app_key="+key+self.health+self.diet); 
+        // console.log(self.data);
         }
         
         self.Get = function(){
             return self.data;
-            //if (vm.result.$$state.value.data.count == 0 ) {
-                //         vm.error = true;
-                //     }
-                //     else {
-                //         vm.error = false;
-                //     }
         }
 
         self.addFave = function(item) {
@@ -33,10 +27,8 @@ function AppService($location, $http) {
                     return;
                 }
             }
-
+           // console.log(self.faveArray);
             self.faveArray.push(item)
-            console.log(self.faveArray)
-
         }
 
         self.getFave = function () {
@@ -45,6 +37,17 @@ function AppService($location, $http) {
 
         self.deleteFave = function (newArray) {
             self.faveArray = newArray;
+            newArray = self.faveArray;
+        }
+
+        self.deleteTempFav = function (item) {
+            for(let i = 0; i < self.faveArray.length; i++){
+                if(item == self.faveArray[i]){
+                    self.faveArray.splice(i, 1);
+
+                }
+            }
+            console.log(self.faveArray);
         }
     }
 

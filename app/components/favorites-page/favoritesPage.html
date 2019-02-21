@@ -16,7 +16,7 @@
             <i class="material-icons md-36 close" ng-click="$ctrl.shown = false">close</i>
             <h3>{{$ctrl.focused.recipe.label}}</h3>
             <p>Calories: {{$ctrl.focused.recipe.calories | number: 0}}</p>
-            <p>{{$ctrl.focused.recipe.ingredientLines}}</p>
+            <p class="scrollable">{{$ctrl.focused.recipe.ingredientLines}}</p>
             <a style="text-decoration: none" href="{{$ctrl.focused.recipe.url}}">Click here to see recipe</a>
         </div>
     </div>
