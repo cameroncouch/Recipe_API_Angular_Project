@@ -46,7 +46,16 @@ const recipeList = {
             vm.$onInit();
         }
 
+        vm.ctrlLength = (str) => {
+            if(str.length >= 60){
+                str = str.slice(0, 60);
+                str = str + "...";
+            }
+            return str;
+        }
+
     }]
+
 };
 
 

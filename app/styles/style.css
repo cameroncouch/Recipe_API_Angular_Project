@@ -85,6 +85,7 @@ a:visited {
 a:hover {
     text-shadow: 1px 1px rgb(92, 13, 13);
     color: red;
+    transition: .5 all;
 }
 /* Styling within NG View - Component Styling */
 search-criteria {
@@ -134,11 +135,12 @@ form {
     border-radius: 8px;
 }
 .recipeTitle {
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 .recipeTitle:hover{
     color: red;
     cursor: pointer;
+    transition: .5 all;
 }
 .imgmain {
     height: 170px;
@@ -176,6 +178,7 @@ h2 {
 
 .material-icons:hover{
     color:#ff0000;
+    transition: .5s all;
 }
 .faved {
     color: #ff0000;

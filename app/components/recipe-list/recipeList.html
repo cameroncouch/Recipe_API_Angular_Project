@@ -3,7 +3,7 @@
 <!-- This is our individual recipe card per response object -->
 <section class="container">
     <div class="recipeCard" ng-repeat="item in $ctrl.result.data.hits">
-        <h2 class="recipeTitle" ng-click="$ctrl.show(item);">{{item.recipe.label}}</h2>
+        <h2 class="recipeTitle" ng-click="$ctrl.show(item);">{{$ctrl.ctrlLength(item.recipe.label)}}</h2>
         <img class="imgmain" ng-click="$ctrl.show(item);" src={{item.recipe.image}}>
         <p class="cook">Prep/Cook Time: {{item.recipe.totalTime || "15"}} minute(s)</p>
         <p class="cal">Calories/serving: {{$ctrl.divide(item.recipe.calories) | number: 0}}</p>
