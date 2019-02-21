@@ -7,7 +7,14 @@ function AppService($location, $http) {
     const dietSearch = ["balanced","high-protein", "low-carb", "low-fat"] //array for the diet filter options
     self.faveArray = []; //array where foods that are faved are pushed
     self.loadCount = 4;
+    self.outterInput;
+    self.outterHealth;
+    self.outterDiet;
     self.Search = function(input, id, idx) {
+
+    self.outterInput = input;
+    self.outterHealth = id;
+    self.outterDiet = idx;
 
         self.health = (id ? "&health=" + healthSearch[Number(id)] : "" ); //If-else statement that governs empty filter options
         self.diet   = (idx ? "&diet="  +  dietSearch[Number(idx)] : "" );
@@ -50,7 +57,7 @@ function AppService($location, $http) {
         self.loadMore = () => {
             self.loadCount = self.loadCount + 4;
             console.log(self.loadCount);
-            self.Search();
+            self.Search(self.outterInput, self.outterHealth, self.outterDiet);
         }
 
         self.resetCount = (num) => {
